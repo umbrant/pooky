@@ -1,6 +1,13 @@
 #!/usr/bin/python
 
+# Written by Andrew Wang.
+# Turing complete translator for the Ook language, a BF variant.
+#
+# See http://www.dangermouse.net/esoteric/ook.html for more info.
+
 import sys
+
+
 
 def parse(raw):
     """Translates Ook into a more readable form."""
@@ -15,6 +22,7 @@ def parse(raw):
     for i in range(len(elements)/2):
         command = elements.pop(0) + elements.pop(0)
         yield translate[command]
+
 
 class Ook:
     """Implements the Ook commands."""
@@ -77,6 +85,7 @@ def main():
 
     while o.hasNext():
         o.next()
+
 
 if __name__ == "__main__":
     main()
