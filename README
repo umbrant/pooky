@@ -3,7 +3,6 @@ This is a short Ook interpreter written in Python. Turing complete! Run some of 
 python pooky.py helloworld.ook
 
 TODO:
-- A GUI?
-- Selector for running programs?
-- More advanced "auto-input" for feeding into the program?
-  - Done with a !inputstufftexthere by itself on the last line.
+- A GUI
+  - Selector for running programs
+  - Configurable stdin
