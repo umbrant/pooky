@@ -13,11 +13,11 @@ import sys
 
 def parse(raw):
     """Translates Ook! into a more parseable form. JK, I actually mean brainf*** :)"""
-    a,b,c = "Ook!.", "Ook!?", "Ook!!"
+    a,b,c = "Ook.", "Ook?", "Ook!"
     elements = raw.split()
     raw_commands = [a+b, b+a, a+a, c+c, a+c, c+a, c+b, b+c]
     real_commands = [">", "<", "+", "-", ",",
-                    ",", "[", "]"]
+                    ".", "[", "]"]
 
     translate = dict(zip(raw_commands, real_commands))
 
@@ -34,7 +34,7 @@ def main():
     # Initialize
     memory = [0]*30000
     mp = 0
-    raw = open(sys.argv[1], ",").readlines()
+    raw = open(sys.argv[1], "r").readlines()
 
     # Look for "stdin" as the last line
     stdin = ""
@@ -42,10 +42,10 @@ def main():
         stdin = raw[-1][1:]
         raw = raw[:-1]
 
-    ext = sys.argv[1].split(".")[-1]:
+    ext = sys.argv[1].split(".")[-1]
     if ext == "ook":
         # It's an Ook! file
-        commands = [x for x in parse("".join(raw))]
+        commands = [x for x in parse("\n".join(raw))]
     elif ext == "bf":
         # It's a bf file
         commands = list("".join(raw))
@@ -97,7 +97,7 @@ def main():
             else:
                 return
 
-        elif cmd is ",":
+        elif cmd is ".":
             sys.stdout.write(chr(memory[mp]))
 
         elif cmd is "[":
