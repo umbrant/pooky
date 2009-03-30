@@ -1,0 +1,157 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>732</width>
+    <height>572</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>pooky Ook! interpreter</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset>
+    <normaloff>../../pictures/icons/black and white/16x16/actions/wizard.png</normaloff>../../pictures/icons/black and white/16x16/actions/wizard.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="QWidget" name="" >
+    <property name="geometry" >
+     <rect>
+      <x>359</x>
+      <y>1</y>
+      <width>371</width>
+      <height>539</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2" >
+     <item>
+      <widget class="QTextBrowser" name="code" >
+       <property name="font" >
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextBrowser" name="registers" >
+       <property name="font" >
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout" >
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2" />
+       </item>
+       <item>
+        <widget class="QLabel" name="filename" >
+         <property name="text" >
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout" >
+         <item>
+          <widget class="QPushButton" name="start" >
+           <property name="text" >
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="step" >
+           <property name="text" >
+            <string>Step</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="" >
+    <property name="geometry" >
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>351</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3" >
+     <item>
+      <widget class="QTextBrowser" name="stdout" >
+       <property name="font" >
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="stdin" >
+       <property name="text" >
+        <string>stdin: </string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>stdout</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>732</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile" >
+    <property name="title" >
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_2" />
+    <addaction name="actionExit" />
+   </widget>
+   <addaction name="menuFile" />
+  </widget>
+  <action name="actionOpen" >
+   <property name="text" >
+    <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionQuit" >
+   <property name="text" >
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionOpen_2" >
+   <property name="text" >
+    <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionExit" >
+   <property name="text" >
+    <string>Exit</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
