@@ -6,6 +6,9 @@ If you prefer messy characters to simple Ook!, then this interpreter can be coer
 # Written by Andrew Wang.
 # See http://www.dangermouse.net/esoteric/ook.html for more info.
 #
+# Source code available at GitHub, the place of all good things:
+#
+#   git clone git://github.com/azuriel/pooky.git
 
 import os, sys
 import time
@@ -43,6 +46,10 @@ class ExecThread(QThread):
     def stop(self):
         self.playing = False
     def step(self):
+        if self.dirty:
+            self.emit(SIGNAL("clearStdout()"))
+            self.highlight()
+            self.dirty = False
         self.stepping = True
 
 
@@ -124,8 +131,7 @@ class ExecThread(QThread):
         while self.cp < end and not done:
             # Pass if not stepping or playing
             if not self.stepping and not self.playing:
-                self.highlight()
-                QThread.msleep(10)
+                QThread.msleep(100)
                 return
 
             cmd = self.commands[self.cp]
@@ -186,7 +192,7 @@ class ExecThread(QThread):
             if self.playing:
                 self.stop()
                 self.emit(SIGNAL("donePlaying()"))
-        self.highlight()
+            self.highlight()
 
 
     def highlight(self):
