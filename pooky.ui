@@ -17,7 +17,7 @@
     <normaloff>../../pictures/icons/black and white/16x16/actions/wizard.png</normaloff>../../pictures/icons/black and white/16x16/actions/wizard.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
-   <widget class="QWidget" name="" >
+   <widget class="QWidget" name="layoutWidget" >
     <property name="geometry" >
      <rect>
       <x>359</x>
@@ -69,6 +69,13 @@
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="stop" >
+           <property name="text" >
+            <string>Stop</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="step" >
            <property name="text" >
             <string>Step</string>
@@ -81,7 +88,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="" >
+   <widget class="QWidget" name="layoutWidget" >
     <property name="geometry" >
      <rect>
       <x>0</x>
@@ -110,8 +117,6 @@
      </item>
     </layout>
    </widget>
-   <zorder>layoutWidget</zorder>
-   <zorder>stdout</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar" >
    <property name="geometry" >
@@ -126,7 +131,7 @@
     <property name="title" >
      <string>File</string>
     </property>
-    <addaction name="actionOpen_2" />
+    <addaction name="actionOpen" />
     <addaction name="actionExit" />
    </widget>
    <addaction name="menuFile" />
@@ -136,19 +141,14 @@
     <string>Open...</string>
    </property>
   </action>
-  <action name="actionQuit" >
-   <property name="text" >
-    <string>Quit</string>
-   </property>
-  </action>
-  <action name="actionOpen_2" >
-   <property name="text" >
-    <string>Open...</string>
-   </property>
-  </action>
   <action name="actionExit" >
    <property name="text" >
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionNull" >
+   <property name="text" >
+    <string>Null</string>
    </property>
   </action>
  </widget>
